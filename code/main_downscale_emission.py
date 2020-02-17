@@ -8,14 +8,12 @@ import copy
 import numpy as np
 import sys
 
-from mylib.io import read_nc
-from mylib.pro_satellite.pro_satellite import calculate_pixel_edge2
 
-sys.path.append('/Users/ywang466/small_projects/downscale_emissions/code')
-from downscale.downscale import calc_overlap_area_record
-from downscale.downscale import downscale_emissions
-from downscale.io import write_nc
-from downscale.grid_utility import get_center_index
+from mylib.downscale.downscale import calc_overlap_area_record
+from mylib.downscale.downscale import downscale_emissions
+from mylib.grid_utility import get_center_index
+from mylib.io import read_nc, write_nc
+from mylib.pro_satellite.pro_satellite import calculate_pixel_edge2
 
 #######################
 # Start user parameters
@@ -28,7 +26,7 @@ MIX_dir = '../data/MIX/'
 downscale_dir = '../data/downscale/'
 
 start_year = 2005
-end_year = 2012
+end_year = 2005
 
 month_list = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
               'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
